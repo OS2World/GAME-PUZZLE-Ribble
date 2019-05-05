@@ -1,0 +1,69 @@
+2001-05-14
+The Source Code is now published under the GPL licence !!
+Check GPL.txt
+
+---------------------------------
+Source code for Ribble v1.00
+
+--------
+
+--------
+
+This archive should unzip to contain the following directories:
+
+./ribble                 Ribble source code
+./ribble/Bitmaps         Bitmaps
+./ribble/bcos2           Borland C++ .prj files
+./ribble/help            Online-help files
+./ribble/install         Install source code
+./ribble/Levels          Ribble game levels
+./ribble/Ribble          Source & headers
+./ribble/watcom          Watcom project
+./support                Contains support classes
+./support/Watcom/os2     OS/2 target .lib
+./support/Watcom/Win31   Win31 target .lib
+./support/Watcom         Watcom project
+./support/Win            Window library classes
+
+To compile and run the source code, you will need the following tools
+installed on your machine:
+
+1) Borland C++ for OS/2 1.0 (or higher)
+2) CPP.EXE from Borland C++ for OS/2
+3) A version of SED
+
+(2) and (3) are only required by the makehelp.cmd script in
+./ribble/help.
+
+Create a directory named "src" in the root directory of one
+of your partitions.  Copy the support and ribble directories
+into this "src" directory.  I use "D:\src".  I hope I've
+removed all the drive-dependencies.
+
+If you have (1), (2), and (3) then the makedist.cmd script should take
+care of building the executables and creating the distribution
+directory.
+
+Ribble has been sucessfully compiled with Borland C++ for OS/2
+v1.0, Watcom C/C++ 10.0 and IBM's CSet++.
+
+Project (.prj) files for BCOS2 are located within in the
+./ribble/bcos2 directory.  If you have IBM CSet++, then you will need
+to create makefiles yourself.  Sorry.
+
+--------
+
+If you're not interested in the source code, a separate archive
+ribble10.zip contains all the files required to install and run
+Ribble.
+
+--------
+
+Enjoy.
+
+--------
+
+J.R.Shannon, 6th September 1994
+jrs@larch.demon.co.uk
+
+

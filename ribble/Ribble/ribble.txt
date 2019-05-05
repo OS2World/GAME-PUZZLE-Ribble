@@ -1,0 +1,15 @@
+       OS/2 Upload Information Template for ftp-os2.nmsu.edu
+
+Archive Name: Ribble.zip
+Program Description: Presentation Manager Boulderdash clone, includes source code.
+Operating System: OS/2 2.x
+
+Program Source: Author
+
+Replaces:
+
+Your name: Jason R Shannon
+Your email address: jrs@larch.demon.co.uk
+
+Proposed directory for placement: 2_x/games
+

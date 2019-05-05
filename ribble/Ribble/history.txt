@@ -1,0 +1,9 @@
+for 1.00
+----
+
+Fixed bug in install program which contained a race-condition
+when setting EAs on ribble.exe and creating Desktop object.
+
+
+
+

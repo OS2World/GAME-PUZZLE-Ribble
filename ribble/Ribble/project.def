@@ -1,0 +1,15 @@
+;
+; Copyright (c)1993, 1994 J.R.Shannon and D.J.Neades
+; All rights reserved.
+;
+
+NAME        Ribble WINDOWAPI
+DESCRIPTION 'Ribble - Copyright (C)1993, 1994 D J Neades and J R Shannon'
+DATA        LOADONCALL MULTIPLE NONSHARED
+CODE        LOADONCALL
+
+STACKSIZE   0x100000
+HEAPSIZE    0x20000
+
+
+

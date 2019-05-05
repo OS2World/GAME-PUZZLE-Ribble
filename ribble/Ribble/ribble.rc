@@ -1,0 +1,313 @@
+//
+// Copyright (c)1993, 1994 J.R.Shannon and D.J.Neades
+// All rights reserved.
+//
+
+#define INCL_WIN
+#include <os2.h>
+#include <hmtailor.h>
+#include "/src/ribble/help/help.h"
+#include "/src/ribble/ribble/resources.h"
+
+
+ICON   IDW_MAIN             LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/ribble.ico"
+POINTER PTR_MAIN            LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/arrow.ptr"
+BITMAP BMP_Empty            LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/empty.bmp"
+BITMAP BMP_Boulder          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/boulder.bmp"
+BITMAP BMP_BlueWall         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/bwall.bmp"
+BITMAP BMP_Diamond          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/diamond.bmp"
+BITMAP BMP_Earth            LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/earth.bmp"
+BITMAP BMP_RedWall          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwall.bmp"
+BITMAP BMP_RedWallN         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwalln.bmp"
+BITMAP BMP_RedWallS         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwalls.bmp"
+BITMAP BMP_RedWallE         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwalle.bmp"
+BITMAP BMP_RedWallW         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwallw.bmp"
+BITMAP BMP_RedWallNE        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwallne.bmp"
+BITMAP BMP_RedWallSE        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwallse.bmp"
+BITMAP BMP_RedWallSW        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwallsw.bmp"
+BITMAP BMP_RedWallNW        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/rwallnw.bmp"
+BITMAP BMP_Spirit           LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/spirit.bmp"
+BITMAP BMP_RibbleStatic     LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/ribblestatic.bmp"
+BITMAP BMP_WalkRight1       LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repr1.bmp"
+BITMAP BMP_WalkRight2       LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repr2.bmp"
+BITMAP BMP_WalkRight3       LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repr3.bmp"
+BITMAP BMP_WalkLeft1        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repl1.bmp"
+BITMAP BMP_WalkLeft2        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repl2.bmp"
+BITMAP BMP_WalkLeft3        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/repl3.bmp"
+BITMAP BMP_Spirit1          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/spirit1.bmp"
+BITMAP BMP_Egg              LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/egg.bmp"
+BITMAP BMP_CrackedEgg       LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/crackedegg.bmp"
+BITMAP BMP_SpiritMask       LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/spiritmsk.bmp"
+BITMAP BMP_Spirit1Mask      LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/spirit1msk.bmp"
+BITMAP BMP_Cage             LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/cage.bmp"
+BITMAP BMP_RibbleV1         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/ribblev1.bmp"
+BITMAP BMP_RibbleV2         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/ribblev2.bmp"
+BITMAP BMP_Edit             LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/edit.bmp"
+BITMAP BMP_EditMask         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/editmsk.bmp"
+BITMAP BMP_Key              LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/key.bmp"
+BITMAP BMP_Safe             LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/safe.bmp"
+BITMAP BMP_Slither          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/slither.bmp"
+BITMAP BMP_SlitherMask      LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/slithermask.bmp"
+BITMAP BMP_Slither1         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/slither1.bmp"
+BITMAP BMP_SlitherMask1     LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/slithermask1.bmp"
+BITMAP BMP_Grave            LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/grave.bmp"
+BITMAP BMP_Title            LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/title.bmp"
+BITMAP BMP_Teleport         LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/teleport.bmp"
+BITMAP BMP_Teleport1        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/teleport1.bmp"
+BITMAP BMP_Teleport2        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/teleport2.bmp"
+BITMAP BMP_Teleport3        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/teleport3.bmp"
+BITMAP BMP_Teleport4        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/teleport4.bmp"
+BITMAP BMP_Bomb          LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/bomb.bmp"
+BITMAP BMP_BombLive1     LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/bombli1.bmp"
+BITMAP BMP_BombLive2     LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/bombli2.bmp"
+BITMAP BMP_Flame1        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/flame1.bmp"
+BITMAP BMP_Flame2        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/flame2.bmp"
+BITMAP BMP_Flame3        LOADONCALL MOVEABLE DISCARDABLE "/src/ribble/bitmaps/flame3.bmp"
+
+BITMAP BMP_TribbleNormal        LOADONCALL "/src/ribble/bitmaps/Tribble-Normal.bmp"
+BITMAP BMP_TribbleAntennae1     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-1.bmp"
+BITMAP BMP_TribbleAntennae2     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-2.bmp"
+BITMAP BMP_TribbleAntennae3     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-3.bmp"
+BITMAP BMP_TribbleAntennae4     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-4.bmp"
+BITMAP BMP_TribbleAntennae5     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-5.bmp"
+BITMAP BMP_TribbleAntennae6     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-6.bmp"
+BITMAP BMP_TribbleAntennae7     LOADONCALL "/src/ribble/bitmaps/Tribble-Antennae-7.bmp"
+BITMAP BMP_TribbleBlink1        LOADONCALL "/src/ribble/bitmaps/Tribble-Blink-1.bmp"
+BITMAP BMP_TribbleBlink2        LOADONCALL "/src/ribble/bitmaps/Tribble-Blink-2.bmp"
+BITMAP BMP_TribbleBlink3        LOADONCALL "/src/ribble/bitmaps/Tribble-Blink-3.bmp"
+BITMAP BMP_TribbleBlink4        LOADONCALL "/src/ribble/bitmaps/Tribble-Blink-4.bmp"
+BITMAP BMP_TribbleBlink5        LOADONCALL "/src/ribble/bitmaps/Tribble-Blink-5.bmp"
+BITMAP BMP_TribbleEyeRoll1      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-1.bmp"
+BITMAP BMP_TribbleEyeRoll2      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-2.bmp"
+BITMAP BMP_TribbleEyeRoll3      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-3.bmp"
+BITMAP BMP_TribbleEyeRoll4      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-4.bmp"
+BITMAP BMP_TribbleEyeRoll5      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-5.bmp"
+BITMAP BMP_TribbleEyeRoll6      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-6.bmp"
+BITMAP BMP_TribbleEyeRoll7      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-7.bmp"
+BITMAP BMP_TribbleEyeRoll8      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-8.bmp"
+BITMAP BMP_TribbleEyeRoll9      LOADONCALL "/src/ribble/bitmaps/Tribble-EyeRoll-9.bmp"
+BITMAP BMP_TribbleSide1         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-1.bmp"
+BITMAP BMP_TribbleSide2         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-2.bmp"
+BITMAP BMP_TribbleSide3         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-3.bmp"
+BITMAP BMP_TribbleSide4         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-4.bmp"
+BITMAP BMP_TribbleSide5         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-5.bmp"
+BITMAP BMP_TribbleSide6         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-6.bmp"
+BITMAP BMP_TribbleSide7         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-7.bmp"
+BITMAP BMP_TribbleSide8         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-8.bmp"
+BITMAP BMP_TribbleSide9         LOADONCALL "/src/ribble/bitmaps/Tribble-Side-9.bmp"
+BITMAP BMP_TribbleSide10        LOADONCALL "/src/ribble/bitmaps/Tribble-Side-10.bmp"
+BITMAP BMP_TribbleSide11        LOADONCALL "/src/ribble/bitmaps/Tribble-Side-11.bmp"
+BITMAP BMP_TribbleJump1         LOADONCALL "/src/ribble/bitmaps/Jump1.bmp"
+BITMAP BMP_TribbleJump2         LOADONCALL "/src/ribble/bitmaps/Jump2.bmp"
+BITMAP BMP_TribbleJump3         LOADONCALL "/src/ribble/bitmaps/Jump3.bmp"
+BITMAP BMP_TribbleJump4         LOADONCALL "/src/ribble/bitmaps/Jump4.bmp"
+BITMAP BMP_TribbleJump5         LOADONCALL "/src/ribble/bitmaps/Jump5.bmp"
+BITMAP BMP_TribbleJump6         LOADONCALL "/src/ribble/bitmaps/Jump6.bmp"
+BITMAP BMP_TribbleJump7         LOADONCALL "/src/ribble/bitmaps/Jump7.bmp"
+BITMAP BMP_TribbleJump8         LOADONCALL "/src/ribble/bitmaps/Jump8.bmp"
+
+
+
+MENU IDM_MainMenu
+BEGIN
+
+  SUBMENU "~Game", IDM_GameMenu
+  BEGIN
+    MENUITEM "~Begin",          IDM_GameStart
+    MENUITEM "~End",           IDM_GameAbandon
+    MENUITEM SEPARATOR
+    MENUITEM "~Open...",        IDM_GameOpen
+    MENUITEM "~Save...",           IDM_GameSave
+    MENUITEM SEPARATOR
+    MENUITEM "E~xit",           IDM_GameExit
+  END
+
+  SUBMENU "~Edit",              IDM_EditMenu
+  BEGIN
+    MENUITEM "~Level...",  IDM_EditLevel
+    MENUITEM SEPARATOR
+    MENUITEM "~Options...",  IDM_EditOptions
+  END
+
+  SUBMENU "~View",              IDM_ViewMenu
+  BEGIN
+    MENUITEM "~Map...",            IDM_ViewMap
+    MENUITEM "~Status...",         IDM_ViewStatus
+  END
+
+  SUBMENU "~Help", IDM_HelpMenu
+  BEGIN
+    MENUITEM "Help ~index...\tF11",       IDM_HelpIndex
+    MENUITEM "~General help...\tF2",      IDM_HelpGeneral
+    MENUITEM "~Using help...\tShift+F10", IDM_HelpUsing
+    MENUITEM "~Keys help...\tF9",         IDM_HelpKeys
+    MENUITEM SEPARATOR
+    MENUITEM "~Product information...",   IDM_HelpProductInfo
+  END
+
+END
+
+DLGTEMPLATE DLG_ProductInfo 
+BEGIN
+	DIALOG "Ribble - Product Information", DLG_ProductInfo, 128, 69, 156, 89, FS_DLGBORDER | WS_VISIBLE | WS_CLIPSIBLINGS, FCF_SYSMENU | FCF_TITLEBAR
+	PRESPARAMS PP_FONTNAMESIZE "8.Helv"
+	BEGIN
+		CONTROL "", DID_AboutButtonGroup, 10, 8, 137, 76, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Ribble", -1, 75, 61, 48, 16, WC_STATIC, SS_TEXT | DT_CENTER | DT_VCENTER | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		PRESPARAMS PP_FONTNAMESIZE "18.Helvetica Bold Italic"
+		CONTROL "Copyright (c) 1993, 1994", -1, 59, 29, 81, 8, WC_STATIC, SS_TEXT | DT_RIGHT | DT_VCENTER | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "J. R. Shannon, and D. J. Neades", -1, 29, 40, 111, 8, WC_STATIC, SS_TEXT | DT_RIGHT | DT_VCENTER | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Version 1.00", 101, 73, 54, 51, 8, WC_STATIC, SS_TEXT | DT_CENTER | DT_VCENTER | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "#1", -1, 42, 56, 30, 20, WC_STATIC, SS_ICON | WS_VISIBLE | WS_GROUP
+		CONTROL "All rights reserved", -1, 77, 16, 63, 8, WC_STATIC, SS_TEXT | DT_RIGHT | DT_VCENTER | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+	END
+
+END
+
+
+
+DLGTEMPLATE DLG_SelectLevel 
+BEGIN
+	DIALOG "Ribble - Level selection", DLG_SelectLevel, 128, 64, 307, 121, WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+	PRESPARAMS PP_FONTNAMESIZE "8.Helv"
+	BEGIN
+		CONTROL "~Levels", -1, 7, 21, 297, 96, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_LevelList, 17, 27, 116, 79, WC_LISTBOX, WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "Level ~information", -1, 141, 27, 156, 82, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Author:", -1, 145, 92, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Mr Wibble", DID_AuthorText, 194, 92, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Comment:", -1, 145, 82, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Wobble?", DID_CommentText, 194, 82, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Must collect:", -1, 145, 72, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Nothing", DID_CollectText, 194, 72, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Time:", -1, 145, 62, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "0", DID_TimeText, 194, 62, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Monsters:", -1, 145, 52, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "0", DID_MonstersText, 194, 52, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Diamonds:", -1, 145, 42, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "0", DID_DiamondsText, 194, 42, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Teleporters:", -1, 145, 32, 45, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "0", DID_TeleportersText, 194, 32, 98, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		DEFPUSHBUTTON "~OK", DID_OK, 198, 3, 51, 14
+		PUSHBUTTON "Cancel", DID_CANCEL, 253, 3, 51, 14
+	END
+
+END
+
+HELPTABLE ID_HELPTABLE
+BEGIN
+  HELPITEM IDW_MAIN,                SUBTABLE_MAIN,  pMAINPANEL
+  HELPITEM DLG_ProductInfo,         SUBTABLE_EMPTY, pPRODUCTINFO
+  HELPITEM DLG_SelectLevel,         SUBTABLE_EMPTY, pSELECTLEVEL
+  HELPITEM DLG_SaveLevel,           SUBTABLE_EMPTY, pSAVELEVELAS
+  HELPITEM DLG_GameOptions,         SUBTABLE_EMPTY, pOPTIONSDIALOG
+
+END
+
+
+HELPSUBTABLE SUBTABLE_MAIN
+SUBITEMSIZE 2
+BEGIN
+  HELPSUBITEM IDM_HelpMenu,         PANEL_HELP
+  HELPSUBITEM IDM_HelpIndex,        PANEL_HELPINDEX
+  HELPSUBITEM IDM_HelpGeneral,      PANEL_HELPEXTENDED
+  HELPSUBITEM IDM_HelpUsing,        PANEL_HELPHELPFORHELP
+  HELPSUBITEM IDM_HelpKeys,         pKEYSMENUITEM
+  HELPSUBITEM IDM_HelpProductInfo,  PANEL_HELPABOUT
+END
+
+HELPSUBTABLE SUBTABLE_EMPTY
+BEGIN
+ 
+END
+
+ACCELTABLE IDW_MAIN LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+  VK_F11, IDM_HelpIndex, VIRTUALKEY
+  VK_F2, IDM_HelpGeneral, VIRTUALKEY
+  VK_F10, IDM_HelpUsing, VIRTUALKEY, SHIFT
+  VK_F9, IDM_HelpKeys, VIRTUALKEY
+END
+
+DLGTEMPLATE DLG_SaveLevel 
+BEGIN
+	DIALOG "Ribble - Save level", DLG_SaveLevel, 128, 64, 262, 113, WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+	PRESPARAMS PP_FONTNAMESIZE "8.Helv"
+	BEGIN
+		CONTROL "~Information", -1, 5, 44, 181, 64, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "~Author", -1, 11, 86, 31, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_SaveAuthorText, 54, 85, 125, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "~Level title", -1, 11, 70, 35, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_SaveTitleText, 54, 69, 125, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "C~omment", -1, 11, 54, 34, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_SaveCommentText, 54, 53, 125, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "~Must collect", -1, 191, 44, 66, 64, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "~Diamonds", DID_CollectDiamonds, 199, 86, 50, 10, WC_BUTTON, BS_AUTOCHECKBOX | WS_VISIBLE | WS_DISABLED | WS_GROUP | WS_TABSTOP
+		CONTROL "~Earth", DID_CollectEarth, 199, 69, 50, 10, WC_BUTTON, BS_AUTOCHECKBOX | WS_VISIBLE | WS_DISABLED | WS_GROUP | WS_TABSTOP
+		CONTROL "Mo~nsters", DID_CollectMonsters, 199, 52, 50, 10, WC_BUTTON, BS_AUTOCHECKBOX | WS_VISIBLE | WS_DISABLED | WS_GROUP | WS_TABSTOP
+		CONTROL "~Time to complete level", -1, 5, 6, 85, 33, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_SaveTime, 22, 16, 52, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "Level ~file", -1, 96, 6, 67, 33, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "", DID_SaveLevelFile, 106, 15, 48, 12, WC_SPINBUTTON, SPBS_MASTER | SPBS_NUMERICONLY | SPBS_JUSTLEFT | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		PRESPARAMS PP_FONTNAMESIZE "10.Helv"
+		CONTROL "~Save", DID_OK, 213, 22, 40, 14, WC_BUTTON, BS_PUSHBUTTON | BS_DEFAULT | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "~Cancel", DID_CANCEL, 213, 5, 40, 14, WC_BUTTON, BS_PUSHBUTTON | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+	END
+
+END
+
+
+DLGTEMPLATE DLG_GameOptions 
+BEGIN
+	DIALOG "Ribble - Options view", DLG_GameOptions, 128, 64, 271, 121, WS_VISIBLE, FCF_SYSMENU | FCF_TITLEBAR
+	PRESPARAMS PP_FONTNAMESIZE "8.Helv"
+	BEGIN
+		CONTROL "~Keys", -1, 6, 4, 102, 114, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "~Arrow", DID_KeysArrow, 13, 98, 50, 10, WC_BUTTON, BS_RADIOBUTTON | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "Cla~ssic", DID_KeysClassic, 13, 85, 50, 10, WC_BUTTON, BS_RADIOBUTTON | WS_VISIBLE | WS_DISABLED | WS_TABSTOP
+		CONTROL "~Other:", DID_KeysOther, 13, 72, 50, 10, WC_BUTTON, BS_RADIOBUTTON | WS_VISIBLE | WS_DISABLED | WS_TABSTOP
+		CONTROL "~Left", DID_LeftText, 32, 59, 22, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_LeftKey, 60, 58, 36, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		CONTROL "~Right", DID_RightText, 32, 44, 22, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_RightKey, 60, 43, 36, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_TABSTOP
+		CONTROL "~Up", DID_UpText, 32, 29, 22, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_UpKey, 60, 28, 36, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_TABSTOP
+		CONTROL "~Down", DID_DownText, 32, 14, 22, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_DownKey, 60, 13, 36, 10, WC_ENTRYFIELD, ES_LEFT | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_TABSTOP
+		CONTROL "~Performance tuning", -1, 114, 23, 151, 95, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "Re~fresh every", -1, 122, 92, 48, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_RefreshRate, 171, 91, 41, 12, WC_SPINBUTTON, SPBS_MASTER | SPBS_NUMERICONLY | SPBS_JUSTLEFT | SPBS_FASTSPIN | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		PRESPARAMS PP_FONTNAMESIZE "10.Helv"
+		CONTROL "milliseconds", -1, 217, 92, 42, 8, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "Playi~ng area", -1, 123, 30, 132, 53, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "~Visible width/height", -1, 143, 56, 41, 15, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_WORDBREAK | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_VisibleSize, 189, 57, 42, 12, WC_SPINBUTTON, SPBS_MASTER | SPBS_READONLY | SPBS_JUSTLEFT | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		PRESPARAMS PP_FONTNAMESIZE "10.Helv"
+		CONTROL "C~ell width/height", -1, 143, 38, 41, 15, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_WORDBREAK | DT_MNEMONIC | WS_VISIBLE
+		CONTROL "", DID_CellSize, 189, 39, 42, 12, WC_SPINBUTTON, SPBS_MASTER | SPBS_READONLY | SPBS_JUSTLEFT | WS_VISIBLE | WS_TABSTOP
+		PRESPARAMS PP_FONTNAMESIZE "10.Helv"
+		DEFPUSHBUTTON "~OK", DID_OK, 177, 4, 34, 14, BS_PUSHBUTTON | BS_DEFAULT | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		PUSHBUTTON "~Cancel", DID_CANCEL, 214, 4, 51, 14
+		CONTROL "~Save options", DID_OptionsSave, 112, 5, 57, 10, WC_BUTTON, BS_AUTOCHECKBOX | WS_VISIBLE | WS_GROUP | WS_TABSTOP
+	END
+
+END
+
+
+
+
+DLGTEMPLATE DLG_HiscoreDialog 
+BEGIN
+	DIALOG "Ribble - High-score entry", DLG_HiscoreDialog, 128, 64, 120, 87, FCF_SYSMENU | FCF_TITLEBAR, FCF_TITLEBAR | FCF_SYSMENU
+	PRESPARAMS PP_FONTNAMESIZE "8.Helv"
+	BEGIN
+		CONTROL "", -1, 6, 26, 110, 58, WC_STATIC, SS_GROUPBOX | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Your feeble score qualifies you for a place in the hi-score table.", DID_QualifyText, 13, 51, 96, 23, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_WORDBREAK | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Ribble", DID_ScoreName, 13, 34, 96, 10, WC_ENTRYFIELD, ES_CENTER | ES_AUTOSCROLL | ES_MARGIN |  WS_VISIBLE | WS_GROUP | WS_TABSTOP
+		DEFPUSHBUTTON "Record it", DID_OK, 40, 6, 41, 14
+		CONTROL "Your pathetic attempt doesn't even qualify you for a position in the hi-score table.", DID_BerateText, 13, 35, 95, 31, WC_STATIC, SS_TEXT | DT_CENTER | DT_TOP | DT_WORDBREAK | DT_MNEMONIC | NOT WS_VISIBLE | WS_GROUP
+	END
+
+END
+
+

@@ -1,0 +1,9 @@
+NAME    		Install WINDOWAPI
+DESCRIPTION		'Ribble installation program - Copyright (c) 1993, 1994 D J Neades and J R Shannon'
+DATA			PRELOAD MULTIPLE NONSHARED
+CODE			PRELOAD
+
+STACKSIZE		0x10000
+HEAPSIZE		0x20000
+
+

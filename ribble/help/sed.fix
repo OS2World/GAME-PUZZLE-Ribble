@@ -1,0 +1,5 @@
+s/!apost!/'/g
+s/!dotdot!/../g
+s/!at!/@/g
+s/!slash!/\\/g
+s/!hash!/#/g

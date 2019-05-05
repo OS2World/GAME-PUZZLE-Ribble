@@ -1,0 +1,152 @@
+LIBRARY     Support INITINSTANCE TERMINSTANCE
+DESCRIPTION 'Support routine Library (c) 1993, 1994 J.R.Shannon'
+STACKSIZE   0x10000
+HEAPSIZE    0x10000
+CODE        LOADONCALL
+DATA        LOADONCALL NONSHARED MULTIPLE
+
+EXPORTS
+
+;From object file:  D:\src\support\cff.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CFindFile::Find(CString&)
+    Find__9CFindFileFR7CString
+    ;CFindFile::~CFindFile()
+    __dt__9CFindFileFv
+    ;CFindFile::CFindFile(char*,CFindFile::CFindAttrib)
+    __ct__9CFindFileFPcQ2_9CFindFile11CFindAttrib
+;From object file:  D:\src\support\cstrng.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CString::operator!=(const char*) const
+    __ne__7CStringCFPCc
+    ;CString::operator==(const char*) const
+    __eq__7CStringCFPCc
+    ;CString::~CString()
+    __dt__7CStringFv
+    ;CString::operator=(const char*)
+    __as__7CStringFPCc
+    ;CString::operator+=(const char*)
+    __apl__7CStringFPCc
+    ;CString::operator[](unsigned int)
+    __vc__7CStringFUi
+    ;CString::operator+(const CString&) const
+    __pl__7CStringCFRC7CString
+    ;CString::CString()
+    __ct__7CStringFv
+    ;CString::CString(const char)
+    __ct__7CStringFCc
+    ;CString::operator>=(const char*) const
+    __ge__7CStringCFPCc
+    ;CString::operator<=(const CString&) const
+    __le__7CStringCFRC7CString
+    ;CString::operator=(const CString&)
+    __as__7CStringFRC7CString
+    ;CString::operator==(const CString&) const
+    __eq__7CStringCFRC7CString
+    ;CString::CString(const CString&)
+    __ct__7CStringFRC7CString
+    ;CString::makeUpper()
+    makeUpper__7CStringFv
+    ;CString::CString(const unsigned int)
+    __ct__7CStringFCUi
+    ;CString::operator char*() const
+    __opPc__7CStringCFv
+    ;CString::rindex(const int)
+    rindex__7CStringFCi
+    ;CString::len() const
+    len__7CStringCFv
+    ;CString::operator<(const CString&) const
+    __lt__7CStringCFRC7CString
+    ;CString::stripTrailing(char)
+    stripTrailing__7CStringFc
+    ;CString::CString(const char*)
+    __ct__7CStringFPCc
+    ;CString::operator+=(const char)
+    __apl__7CStringFCc
+    ;CString::chunkRound(unsigned int) const
+    chunkRound__7CStringCFUi
+    ;CString::operator=(const char)
+    __as__7CStringFCc
+    ;CString::makeLower()
+    makeLower__7CStringFv
+    ;CString::operator<(const char*) const
+    __lt__7CStringCFPCc
+    ;CString::operator>=(const CString&) const
+    __ge__7CStringCFRC7CString
+    ;CString::operator+=(const CString&)
+    __apl__7CStringFRC7CString
+    ;CString::operator<=(const char*) const
+    __le__7CStringCFPCc
+    ;CString::operator!=(const CString&) const
+    __ne__7CStringCFRC7CString
+    ;CString::operator>(const CString&) const
+    __gt__7CStringCFRC7CString
+    ;CString::operator>(const char*) const
+    __gt__7CStringCFPCc
+    ;CString::index(const int)
+    index__7CStringFCi
+;From object file:  D:\src\support\cassert.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CAssertHandler(const char*,const char*,const int)
+    CAssertHandler__FPCcT1Ci
+;From object file:  D:\src\support\fpgline.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;fpreadline(int)
+    fpreadline__Fi
+    ;fpgetline(int)
+    fpgetline__Fi
+;From object file:  D:\src\support\cumtxsem.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CUMtxSem::CUMtxSem()
+    __ct__8CUMtxSemFv
+    ;CUMtxSem::obtain() const
+    obtain__8CUMtxSemCFv
+    ;CUMtxSem::release() const
+    release__8CUMtxSemCFv
+    ;CUMtxSem::~CUMtxSem()
+    __dt__8CUMtxSemFv
+    ;CUMtxSem::request(unsigned long) const
+    request__8CUMtxSemCFUl
+;From object file:  D:\src\support\cthread.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CThread::Run()
+    Run__7CThreadFv
+    __vft7CThread
+    ;CThread::~CThread()
+    __dt__7CThreadFv
+    ;CThread::CThread()
+    __ct__7CThreadFv
+    ;CThread::QueryTID()
+    QueryTID__7CThreadFv
+    ;CThread::Kill()
+    Kill__7CThreadFv
+    ;CThread::Wait()
+    Wait__7CThreadFv
+;From object file:  D:\src\support\makepath.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;isValidPath(const char*)
+    isValidPath__FPCc
+    ;makePath(const char*)
+    makePath__FPCc
+;From object file:  D:\src\support\cbr.obj
+  ;EXPDEFs (Symbols marked to be exported from object file):
+    ;CBufferedRead::read(char*,unsigned int)
+    read__13CBufferedReadFPcUi
+    ;CBufferedRead::CBufferedRead(int)
+    __ct__13CBufferedReadFi
+    ;CBufferedRead::opened()
+    opened__13CBufferedReadFv
+    ;CBufferedRead::getline()
+    getline__13CBufferedReadFv
+    ;CBufferedRead::~CBufferedRead()
+    __dt__13CBufferedReadFv
+    ;CBufferedRead::CBufferedRead(const char*,int)
+    __ct__13CBufferedReadFPCci
+    ;CBufferedRead::rewind()
+    rewind__13CBufferedReadFv
+    ;CBufferedRead::close()
+    close__13CBufferedReadFv
+    ;CBufferedRead::flush()
+    flush__13CBufferedReadFv
+    ;CBufferedRead::seek(long)
+    seek__13CBufferedReadFl
