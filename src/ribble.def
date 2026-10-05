@@ -1,0 +1,14 @@
+;
+; Copyright (c)1993, 1994 J.R.Shannon and D.J.Neades
+; All rights reserved.
+;
+; Module definition for Ribble (plan.txt section 5).
+; No DESCRIPTION field.  The BLDLEVEL string lives in mainwin.cpp.
+
+NAME        Ribble WINDOWAPI
+
+DATA        LOADONCALL MULTIPLE NONSHARED
+CODE        LOADONCALL
+
+STACKSIZE   0x10000
+HEAPSIZE    0x1000

@@ -1,0 +1,20 @@
+# Build output - never commit
+bin/
+
+# Editor / OS droppings
+*.obj
+*.res
+*.map
+*.err
+*.log
+compile-wat.log
+
+# OS/2 temporary files
+*.tmp
+*~
+
+# Tools scratch
+tools/guest-*.cmd
+tools/pidprobe.obj
+tools/pidprobe.exe
+tools/det-pid.txt

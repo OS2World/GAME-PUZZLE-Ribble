@@ -1,0 +1,82 @@
+Ribble for OS/2 - Changelog
+============================
+
+
+Version 1.1 (2026-10-04)
+------------------------
+Second release: gameplay conveniences and a fully translated online
+help.
+
+- New accelerators: Ctrl+M toggles the map panel (Game > Map...) and
+  Ctrl+T shows the status bar (Game > Status...). Both shortcuts are
+  shown in the menus and translated in all six languages.
+- Main window panel widened: the Score / Time / Lives / Diamonds
+  columns are wider so the enlarged text no longer clips.
+- Fixed: the Options > Map Editor > Options... popup was not
+  retranslated when the display language changed; it now uses its own
+  translated label like the top-level popups.
+- Online help compiled for all six languages (Spanish, Dutch, German,
+  French and Italian, with English as the base translation) and
+  shipped in bin\help\.
+- English help renamed to ribble-en.hlp so every language follows the
+  same ribble-<lang> naming.
+- The help library is bound per language: switching the display
+  language with Options > Language also switches the online help.
+- About dialog, BLDLEVEL string, profile name and this document
+  updated to version 1.1.
+
+
+Version 1.00 (2026-10-04)
+-------------------------
+First 32-bit release: Ribble is ported to OS/2 Presentation Manager
+and ArcaOS and rebuilt with Open Watcom C++ 2.0.1.
+
+- Menus restructured to Game / Edit / Options / Help.
+- Map... and Status... moved from the View menu into the Game menu;
+  the now-empty View menu was removed.
+- The Edit menu moved inside Options and is now titled "Map Editor"
+  (Options > Map Editor > Level... / Options...). The label is
+  translated in all six languages.
+- Fixed: switching language retitled the Language and Help menus with
+  the wrong strings (per-array indexing). Each top-level title now uses
+  its own translated string.
+- New Options menu: Settings..., Language submenu (English, Spanish,
+  Dutch, German, French, Italian) and "Save settings on exit".
+- Accelerators added: Ctrl+N (New Game), Ctrl+O (Open), Ctrl+S (Save),
+  Ctrl+Q (End Game), Ctrl+X (Exit).
+- About dialog standardized (title bar, single Close button, centered
+  credits) while keeping the animated tribble.
+- Language selection is stored in the OS/2 user profile.
+- Settings are re-applied on exit when "Save settings on exit" is on.
+- BLDLEVEL version string embedded.
+- Source placed under GNU General Public License v3.
+- Help menu reordered per the shared game-port plan (Help for help,
+  Extended help, Keys help, Help index, About).
+- Window and game area doubled: default cell size is now 64x64 (was
+  32x32) and the status strip is twice as high; tiles are displayed
+  2x larger while the play field stays 7x7 cells.
+- Fixed: level files were copied flat into bin but the game opens them
+  relative to the working directory as levels/level.N, so every game
+  silently fell back to the 4x4 blank "Prison" map with no boulders and
+  no diamonds. The build now copies levels into bin\levels and the real
+  level data (e.g. "Chequers", 8x8, 10 diamonds) loads correctly.
+- Visible play field doubled: the default view is now 14x14 cells (was
+  7x7). The Settings dialog adds 14x14 to the visible-size choices and
+  accepts even view sizes. Help text updated to match.
+- The Space-bar overview map (Game > Map...) now renders twice as large:
+  each overview cell is 32x32 pels (was 16x16), so the mini-map is
+  double the size for the same window.
+- Main window text enlarged: the Score / Time / Lives / Diamonds panel
+  and the top-of-map HUD use a 12-point font (was 8-point), the panel
+  strip height and column widths were widened to match, and the Status
+  screen line spacing was scaled up. The high-score table after each
+  game is likewise bigger (larger rows/columns), and the "High-score
+  entry" dialog now uses a 12-point font too (it scales whole).
+
+
+Original Version History (1993-1994)
+------------------------------------
+Ribble was originally released as a 16-bit OS/2 1.x game by
+J. R. Shannon and D. J. Neades, ported commercially to OS/2 2.x as
+Ribble for OS/2. Level editor, editor options and level select are
+part of the original design and are preserved.

@@ -1,0 +1,12 @@
+s/'/!apost!/g
+s/:/\&colon./g
+s/\.\./!dotdot!/g
+s/\@/!at!/g
+s/\\/!slash!/g
+s/\#include/!include!/g
+s/\#/!hash!/g
+s/!include!/\#include/g
+s/\/\//.*/g
+
+
+
