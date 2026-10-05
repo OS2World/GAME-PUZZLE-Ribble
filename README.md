@@ -3,6 +3,8 @@
 Boulder Dash style puzzle game for OS/2 and ArcaOS, modernized and
 rebuilt as a 32-bit Presentation Manager application with Open Watcom.
 
+![Ribble ScreenShot](/doc/Ribble.png)
+
 ## Status
 
 **Version 1.1** (2026-10-04). Builds with Open Watcom C++ 2.0.1 on
