@@ -76,6 +76,8 @@ da capo.
 :hp2.Tasto Spazio:ehp2., per attivare/disattivare la visualizzazione della mappa
 :lm margin=1.
 :p.
+Questi sono i tasti predefiniti. Scegli :hp2.Assegnazione tasti...:ehp2. dal menu :hp2.Opzioni:ehp2. per assegnare altri tasti ai quattro movimenti e configurare un joystick. La pagina :hp1.Tastiera:ehp1. ha una casella per movimento&colon. fai clic su una casella e premi il tasto desiderato. La pagina :hp1.Joystick:ehp1. permette di attivare un joystick, scegliere la leva A o B, assegnare un pulsante o una direzione della leva a ogni movimento e calibrare la leva. Tastiera e joystick funzionano insieme. :hp1.Predefinito:ehp1. ripristina le impostazioni standard, :hp1.OK:ehp1. salva le modifiche e :hp1.Annulla:ehp1. le scarta.
+:p.
 Gli altri tasti sono descritti nelle sezioni della guida in linea
 relative alle aree in cui vengono usati.
 :h2 res=10011.Guida per la voce di menu Tasti
@@ -462,21 +464,9 @@ che hanno a che fare con OS/2 in IBM.
 :h1 res=10023.Finestra di dialogo Opzioni...
 :i1.Finestra di dialogo Opzioni...
 :p.
+I tasti per spostare :hp2.Ribble:ehp2. non si impostano piu in questa finestra di dialogo. Usa :hp2.Assegnazione tasti...:ehp2. dal menu :hp2.Opzioni:ehp2. per cambiare i tasti o configurare un joystick.
+:p.
 Usa i controlli di questa finestra di dialogo per&colon.
-:lm margin=5.
-:p.
-&sqbul. modificare i tasti usati per spostare :hp2.Ribble:ehp2.
-:lm margin=8.
-:p.
-Le tre possibili scelte sono&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Frecce:ehp1., tasti cursore.
-:p.
-&sqbul. :hp1.Classico:ehp1., dove Z = sinistra, X = destra, ' (apostrofo) = su e
-/ (barra) = giu'.
-:p.
-&sqbul. :hp1.Altro:ehp1., come preferisci.
 :lm margin=5.
 :p.
 &sqbul. modificare varie impostazioni per regolare le prestazioni

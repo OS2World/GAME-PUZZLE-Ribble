@@ -66,35 +66,6 @@ GameOptions::SetupWindow(void)
 
   WinCheckButton(HWindow, DID_OptionsSave, config->QuerySaveConfig() ? TRUE : FALSE);
 
-  switch (config->QueryControlType())
-    {
-    case RibbleConfig::Arrow:
-      WinCheckButton(HWindow, DID_KeysArrow, TRUE);
-      WinSetFocus(HWND_DESKTOP, WinWindowFromID(HWindow, DID_KeysArrow));
-      break;
-    case RibbleConfig::Classic:
-      WinCheckButton(HWindow, DID_KeysClassic, TRUE);
-      WinSetFocus(HWND_DESKTOP, WinWindowFromID(HWindow, DID_KeysClassic));
-      break;
-    case RibbleConfig::Other:
-      WinCheckButton(HWindow, DID_KeysOther, TRUE);
-      WinSetFocus(HWND_DESKTOP, WinWindowFromID(HWindow, DID_KeysOther));
-      break;
-    }
-
-  HandleKeyEnable();
-
-  char buffer[] = "n";
-
-  buffer[0] = config->QueryLeftKey();
-  WinSetDlgItemText(HWindow, DID_LeftKey, (PSZ)buffer);
-  buffer[0] = config->QueryRightKey();
-  WinSetDlgItemText(HWindow, DID_RightKey, (PSZ)buffer);
-  buffer[0] = config->QueryUpKey();
-  WinSetDlgItemText(HWindow, DID_UpKey, (PSZ)buffer);
-  buffer[0] = config->QueryDownKey();
-  WinSetDlgItemText(HWindow, DID_DownKey, (PSZ)buffer);
-
   int ref = config->QueryRefreshRate();
 
   WinSendDlgItemMsg(HWindow, DID_RefreshRate, SPBM_SETLIMITS, MPFROMLONG(500), MPFROMLONG(0));
@@ -138,7 +109,6 @@ GameOptions::WMCommand(MPARAM mp1, MPARAM mp2)
 
         // Pull in changes made and store in config.
 
-        StoreKeySettings(config);
         StoreRefreshRate(config);
         StoreSizes(config);
         config->SaveConfig();
@@ -154,112 +124,8 @@ GameOptions::WMCommand(MPARAM mp1, MPARAM mp2)
 MRESULT
 GameOptions::WMControl(MPARAM mp1, MPARAM mp2)
 {
-  mp2;
-
-  RibbleConfig* config = win->QueryConfig();
-
-  /*  if (SHORT2FROMMP(mp1) == BN_CLICKED)
-      {
-      switch (SHORT1FROMMP(mp1))
-      {
-      case DID_KeysArrow:
-      pmPrintf("arrow click\n");
-      break;
-      case DID_KeysOther:
-      pmPrintf("other click\n");
-      break;
-      case DID_KeysClassic:
-      pmPrintf("classic click\n");
-      break;
-      }
-      }
-      */
-
-  switch (SHORT1FROMMP(mp1))
-    {
-    case DID_KeysArrow:
-      if (SHORT2FROMMP(mp1) == BN_CLICKED)
-        {
-          WinCheckButton(HWindow, DID_KeysArrow,   TRUE );
-          WinCheckButton(HWindow, DID_KeysClassic, FALSE);
-          WinCheckButton(HWindow, DID_KeysOther,   FALSE);
-
-          config->SetControlType(RibbleConfig::Arrow);
-          HandleKeyEnable();
-        }
-      break;
-    case DID_KeysClassic:
-      if (SHORT2FROMMP(mp1) == BN_CLICKED)
-        {
-          WinCheckButton(HWindow, DID_KeysArrow,   FALSE);
-          WinCheckButton(HWindow, DID_KeysClassic, TRUE );
-          WinCheckButton(HWindow, DID_KeysOther,   FALSE);
-
-          config->SetControlType(RibbleConfig::Classic);
-          HandleKeyEnable();
-        }
-      break;
-    case DID_KeysOther:
-      if (SHORT2FROMMP(mp1) == BN_CLICKED)
-        {
-          WinCheckButton(HWindow, DID_KeysArrow,   FALSE);
-          WinCheckButton(HWindow, DID_KeysClassic, FALSE);
-          WinCheckButton(HWindow, DID_KeysOther,   TRUE );
-
-          config->SetControlType(RibbleConfig::Other);
-          HandleKeyEnable();
-        }
-      break;
-    default:
-      break;
-    }
-
+  mp1; mp2;
   return 0;
-}
-
-void
-GameOptions::HandleKeyEnable(void)
-{
-  RibbleConfig* config = win->QueryConfig();
-
-  BOOL enable = TRUE;
-
-  if (config->QueryControlType() != RibbleConfig::Other)
-    enable = FALSE;
-
-  enable = FALSE;
-
-  WinEnableWindow(WinWindowFromID(HWindow, DID_LeftKey), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_RightKey), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_UpKey), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_DownKey), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_LeftText), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_RightText), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_UpText), enable);
-  WinEnableWindow(WinWindowFromID(HWindow, DID_DownText), enable);
-}
-
-void
-GameOptions::StoreKeySettings(RibbleConfig* config)
-{
-  RibbleConfig::ControlType ct = RibbleConfig::Unset;
-
-  ULONG state;
-
-  state = WinQueryButtonCheckstate(HWindow, DID_KeysClassic);
-  if (state)
-    ct = RibbleConfig::Classic;
-
-  state = WinQueryButtonCheckstate(HWindow, DID_KeysArrow);
-  if (state)
-    ct = RibbleConfig::Arrow;
-
-  state = WinQueryButtonCheckstate(HWindow, DID_KeysOther);
-  if (state)
-    ct = RibbleConfig::Other;
-
-  if (ct != RibbleConfig::Unset)
-    config->SetControlType(ct);
 }
 
 void

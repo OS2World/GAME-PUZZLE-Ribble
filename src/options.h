@@ -16,8 +16,6 @@ public:
   void SetupWindow(void);
   MRESULT WMControl(MPARAM mp1, MPARAM mp2);
   MRESULT WMCommand(MPARAM mp1, MPARAM mp2);
-  void HandleKeyEnable(void);
-  void StoreKeySettings(RibbleConfig* config);
   void StoreRefreshRate(RibbleConfig* config);
   void StoreSizes(RibbleConfig* config);
 

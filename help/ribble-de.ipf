@@ -77,6 +77,8 @@ von vorn zu beginnen.
 :hp2.Leertaste:ehp2., um die Kartenanzeige ein- und auszuschalten
 :lm margin=1.
 :p.
+Dies sind die Standardtasten. Waehlen Sie :hp2.Tastenzuordnung...:ehp2. im Menue :hp2.Optionen:ehp2., um den vier Bewegungen andere Tasten zuzuweisen und einen Joystick einzurichten. Die Seite :hp1.Tastatur:ehp1. hat ein Feld pro Bewegung&colon. Klicken Sie auf ein Feld und druecken Sie die gewuenschte Taste. Auf der Seite :hp1.Joystick:ehp1. koennen Sie einen Joystick aktivieren, Stick A oder B waehlen, jeder Bewegung eine Stick-Taste oder Richtung zuweisen und den Stick kalibrieren. Tastatur und Joystick arbeiten zusammen. :hp1.Standard:ehp1. stellt die Standardeinstellungen wieder her, :hp1.OK:ehp1. speichert die Aenderungen und :hp1.Abbrechen:ehp1. verwirft sie.
+:p.
 Weitere Tasten werden in den On-line-Hilfe-Abschnitten
 der jeweiligen Bereiche beschrieben.
 :h2 res=10011.Hilfe fuer den Menuepunkt Tasten
@@ -461,21 +463,9 @@ bei IBM mit OS/2 zu tun haben.
 :h1 res=10023.Dialog Optionen...
 :i1.Dialog Optionen...
 :p.
+Die Tasten zum Bewegen von :hp2.Ribble:ehp2. werden nicht mehr in diesem Dialog festgelegt. Verwenden Sie :hp2.Tastenzuordnung...:ehp2. im Menue :hp2.Optionen:ehp2., um die Tasten zu aendern oder einen Joystick einzurichten.
+:p.
 Verwenden Sie die Steuerelemente in diesem Dialog, um&colon.
-:lm margin=5.
-:p.
-&sqbul. die Tasten zu aendern, mit denen :hp2.Ribble:ehp2. bewegt wird
-:lm margin=8.
-:p.
-Die drei moeglichen Auswahlmoeglichkeiten sind&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Pfeile:ehp1., Cursortasten.
-:p.
-&sqbul. :hp1.Klassisch:ehp1., wobei Z = links, X = rechts, ' (Apostroph) = oben und
-/ (Schraege) = unten.
-:p.
-&sqbul. :hp1.Andere:ehp1., was auch immer Sie wollen.
 :lm margin=5.
 :p.
 &sqbul. verschiedene Einstellungen zu aendern, um die Leistung abzustimmen

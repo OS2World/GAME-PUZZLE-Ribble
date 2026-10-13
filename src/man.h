@@ -23,6 +23,7 @@ public:
   virtual void KeySet(int _key, ULONG _state);
   virtual BOOL IsMan(void) { return TRUE; }
   virtual void Revive(void);
+  void ClearKeys(void);
 
 private:
 
@@ -36,6 +37,7 @@ private:
 public:
 
   int keys[4];
+  int joy[4];                   // joystick state, same order
 
 };
 

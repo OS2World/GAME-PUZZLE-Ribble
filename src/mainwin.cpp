@@ -29,11 +29,12 @@
 #include "lang.h"
 
 #include <stdio.h>
+#include "keymap.h"
 
 // BLDLEVEL string (plan.txt section 4): <Vendor>:<Version> signature followed
 // by build date, platform tag and description.
 const char BldLevel[] =
-  "@#J.R.Shannon & D.J.Neades:1.1#@##1## 04 Oct 2026 00:00:00      "
+  "@#J.R.Shannon & D.J.Neades:1.2#@##1## 12 Oct 2026 00:00:00      "
   "ARCAOS:::0::::@@Ribble - Boulder Dash style puzzle game for OS/2\r\n\x1a";
 
 int current_lang = LANG_ENGLISH;
@@ -59,6 +60,7 @@ static const LangMenuItem LocalizedItems[] =
   { IDM_ViewMap,      IDM_GameMenu,      STR_MENU_VIEWMAP  },
   { IDM_ViewStatus,   IDM_GameMenu,      STR_MENU_VIEWSTATUS },
   { IDM_Settings,     IDM_OptionsMenu,   STR_MENU_SETTINGS },
+  { IDM_KeyMap,       IDM_OptionsMenu,   STR_MENU_KEYMAP  },
   { IDM_FrameControl, IDM_OptionsMenu,   STR_MENU_FRAME   },
   { IDM_SaveOptions,  IDM_OptionsMenu,   STR_MENU_SAVEONEXIT },
   { IDM_About,        IDM_HelpMenu,      STR_MENU_ABOUT    }
@@ -91,6 +93,7 @@ MainWindow::MainWindow(HAB hab)
   restartLevel = FALSE;
   config = new RibbleConfig();
   config->LoadConfig();
+  KmInit();
   hwndTitleBar = hwndSysMenu = hwndMinMax = hwndMenuBar = hwndObject = 0;
   frameHidden = FALSE;
 }
@@ -98,6 +101,7 @@ MainWindow::MainWindow(HAB hab)
 
 MainWindow::~MainWindow()
 {
+  KmDone();
   WinStopTimer(QueryHAB(), HWindow, TimerID);
   WinStopTimer(QueryHAB(), HWindow, TitleID);
 
@@ -322,7 +326,16 @@ void
 MainWindow::WMTimer(void)
 {
   if (inGame == TRUE)
-    HandleThings();
+    {
+      // joystick: feed the stick into the man (not the map editor cursor)
+      if (KmJoyEnabled() && man && man->IsMan())
+        {
+          KmJoyPoll();
+          for (int a = 0; a < KM_NACT; a++)
+            man->joy[a] = KmJoyDown(a) ? 1 : 0;
+        }
+      HandleThings();
+    }
 }
 
 MRESULT
@@ -386,6 +399,11 @@ MainWindow::ProcessCmd(MPARAM mp1, MPARAM mp2)
     case IDM_Settings:
       OptionsDialog();
       break;
+    case IDM_KeyMap:
+      KmDialog(HWindow);
+      if (man)
+        man->ClearKeys();
+      break;
     case IDM_SaveOptions:
       config->SetSaveConfig(config->QuerySaveConfig() ? 0 : 1);
       WinCheckMenuItem(hwndMenu, IDM_SaveOptions, config->QuerySaveConfig() ? TRUE : FALSE);
@@ -428,6 +446,16 @@ MainWindow::WMChar(void)
     }
   else if (man)
     {
+      if (!(fs & KC_VIRTUALKEY))
+        {
+          // an ordinary key assigned to a move in Key Mapping
+          int act = KmKeyAction(fs, 0, charmsg->scancode);
+          if (act >= 0)
+            {
+              man->KeySet(act, fs);
+              fProcessed = TRUE;
+            }
+        }
       if (fs & KC_VIRTUALKEY)
         {
           fProcessed = TRUE;
@@ -439,29 +467,9 @@ MainWindow::WMChar(void)
               ToggleMap();
             }
 
-          switch (charmsg->vkey)
-            {
-            case VK_LEFT:
-              {
-                man->KeySet(LeftKey, fs);
-                break;
-              }
-            case VK_RIGHT:
-              {
-                man->KeySet(RightKey, fs);
-                break;
-              }
-            case VK_UP:
-              {
-                man->KeySet(UpKey, fs);
-                break;
-              }
-            case VK_DOWN:
-              {
-                man->KeySet(DownKey, fs);
-                break;
-              }
-            }
+          int act = KmKeyAction(fs, charmsg->vkey, charmsg->scancode);
+          if (act >= 0)
+            man->KeySet(act, fs);
 
           switch (charmsg->vkey)
             {

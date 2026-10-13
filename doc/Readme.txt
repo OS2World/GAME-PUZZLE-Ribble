@@ -1,4 +1,4 @@
-Ribble for OS/2 - Version 1.1
+Ribble for OS/2 - Version 1.2
 ===============================
 
 
@@ -19,8 +19,8 @@ eggs, dodge monsters and teleport around the caves.
 
 HOW TO PLAY
 -----------
-- Arrow keys move the little man; use the keyboard mapping from
-  Options > Settings... to pick your preferred control scheme.
+- Arrow keys move the little man by default; Options > Key Mapping...
+  lets you assign other keys or a joystick.
 - Collect all the diamonds to open the exit (cage drops).
 - Avoid rolling boulders, bombs and monsters.
 - Space bar toggles the map panel on/off.
@@ -41,7 +41,8 @@ CONTROLS
   Ctrl+Q            Quit current game (shows scores)
   Ctrl+X            Exit application
 
-  Custom key bindings can be set under Options > Settings...
+  Custom keys and joystick control can be set under
+  Options > Key Mapping...
 
 
 MENUS
@@ -57,7 +58,8 @@ MENUS
   Options > Map Editor > Level...    Level editor
   Options > Map Editor > Options...  Editor options
 
-  Options > Settings...    Game and control settings
+  Options > Settings...    Game settings (refresh rate, sizes)
+  Options > Key Mapping... Keyboard and joystick mapping of the four moves
   Options > Language       Switch display language (English, Spanish,
                            Dutch, German, French, Italian; also
                            switches the online help language)

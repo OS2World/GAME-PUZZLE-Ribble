@@ -76,6 +76,8 @@ from scratch.
 :hp2.Space:ehp2. key, to toggle the map display on/off
 :lm margin=1.
 :p.
+These are the default keys. Choose :hp2.Key Mapping...:ehp2. from the :hp2.Options:ehp2. menu to assign other keys to the four moves and to set up a joystick. The :hp1.Keyboard:ehp1. page has one box per move&colon. click a box and press the key you want. The :hp1.Joystick:ehp1. page lets you enable a joystick, choose stick A or B, assign a stick button or direction to each move and calibrate the stick. The keyboard and the joystick work together. :hp1.Default:ehp1. restores the standard settings, :hp1.OK:ehp1. saves the changes and :hp1.Cancel:ehp1. discards them.
+:p.
 Other keys are described in the on-line help sections
 for the areas where they are applicable.
 :h2 res=10011.Help for keys menu-item
@@ -450,21 +452,9 @@ OS/2 at IBM.
 :h1 res=10023.Options... dialog
 :i1.Options... dialog
 :p.
+The keys that move :hp2.Ribble:ehp2. are no longer set in this dialog. Use :hp2.Key Mapping...:ehp2. in the :hp2.Options:ehp2. menu to change the keys or to set up a joystick.
+:p.
 Use the controls in this dialog to&colon.
-:lm margin=5.
-:p.
-&sqbul. alter the keys used to move :hp2.Ribble:ehp2. around
-:lm margin=8.
-:p.
-The three possible selections are&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Arrow:ehp1., cursor keys.
-:p.
-&sqbul. :hp1.Classic:ehp1., where Z = left, X = right, ' (apostrophe) = up, and
-/ (forward slash) = down.
-:p.
-&sqbul. :hp1.Other:ehp1., whatever you like.
 :lm margin=5.
 :p.
 &sqbul. alter various settings in order to tune performance

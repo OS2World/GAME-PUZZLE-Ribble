@@ -76,6 +76,8 @@ van voren af aan te starten.
 :hp2.Toets Spatie:ehp2., om de kaartweergave aan of uit te zetten
 :lm margin=1.
 :p.
+Dit zijn de standaardtoetsen. Kies :hp2.Toetsen toewijzen...:ehp2. in het menu :hp2.Opties:ehp2. om andere toetsen aan de vier bewegingen toe te wijzen en een joystick in te stellen. De pagina :hp1.Toetsenbord:ehp1. heeft een vak per beweging&colon. klik op een vak en druk op de gewenste toets. Op de pagina :hp1.Joystick:ehp1. kun je een joystick inschakelen, stick A of B kiezen, een stickknop of richting aan elke beweging toewijzen en de stick kalibreren. Toetsenbord en joystick werken samen. :hp1.Standaard:ehp1. herstelt de standaardinstellingen, :hp1.OK:ehp1. bewaart de wijzigingen en :hp1.Annuleren:ehp1. verwerpt ze.
+:p.
 Andere toetsen worden beschreven in de on-line help-secties
 van de betreffende onderdelen.
 :h2 res=10011.Help voor het menu-item Toetsen
@@ -344,7 +346,7 @@ te sluiten zonder het level op te slaan.
 Let op het draaiknopje voor het levelnummer onderaan
 het dialoogvenster. Dit nummer geeft de positie in de levelvolgorde aan.
 Wil :hp2.Ribble:ehp2. je levels gebruiken, dan
-moeten ze opeenvolgend genummerd zijn vanaf ǸǸn (1) naar boven.  Je
+moeten ze opeenvolgend genummerd zijn vanaf een (1) naar boven.  Je
 kunt het levelselectievenster gebruiken om het hoogste
 genummerde level te vinden, of kijken in de map "levels"
 in de map van het uitvoerbare bestand :hp2.Ribble:ehp2..
@@ -456,21 +458,9 @@ OS/2 bij IBM betrokken is.
 :h1 res=10023.Dialoogvenster Opties...
 :i1.Dialoogvenster Opties...
 :p.
+De toetsen om :hp2.Ribble:ehp2. te verplaatsen worden niet meer in dit dialoogvenster ingesteld. Gebruik :hp2.Toetsen toewijzen...:ehp2. in het menu :hp2.Opties:ehp2. om de toetsen te wijzigen of een joystick in te stellen.
+:p.
 Gebruik de besturingselementen in dit dialoogvenster om&colon.
-:lm margin=5.
-:p.
-&sqbul. de toetsen te wijzigen die worden gebruikt om :hp2.Ribble:ehp2. te verplaatsen
-:lm margin=8.
-:p.
-De drie mogelijke keuzes zijn&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Pijltjes:ehp1., cursortoetsen.
-:p.
-&sqbul. :hp1.Klassiek:ehp1., waarbij Z = links, X = rechts, ' (apostrof) = omhoog en
-/ (schuine streep) = omlaag.
-:p.
-&sqbul. :hp1.Anders:ehp1., wat je maar wilt.
 :lm margin=5.
 :p.
 &sqbul. verschillende instellingen wijzigen om de prestaties af te stemmen

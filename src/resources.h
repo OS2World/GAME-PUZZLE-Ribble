@@ -191,6 +191,7 @@ enum {
 
 #define IDM_OptionsMenu            250
 #define IDM_Settings               201
+#define IDM_KeyMap                 202
 #define IDM_FrameControl           210
 #define IDM_SaveOptions            220
 #define IDM_LangMenu               300
@@ -256,6 +257,26 @@ enum {
 #define DID_QualifyText            1043
 #define DID_AboutButtonGroup	1044
 
+
+// Key Mapping dialog (keymap.cpp)
+#define IDD_KEY_MAPPING           0xb000
+#define BN_KM_DEFAULTS            0xb007
+#define DLG_KM_KBD                0xb100
+#define DLG_KM_JOY                0xb101
+#define IDC_KM_NB                 0xb110
+#define IDC_KM_KH                 0xb120
+#define IDC_KM_JEN                0xb130
+#define IDC_KM_JP                 0xb131
+#define IDC_KM_JPA                0xb133
+#define IDC_KM_JPB                0xb134
+#define IDC_KM_JH1                0xb137
+#define IDC_KM_JH2                0xb138
+#define IDC_KM_JCALA              0xb139
+#define IDC_KM_JCALB              0xb13a
+#define IDC_KM_KLBL               0xb140      /* +0..3 */
+#define IDC_KM_KBOX               0xb148      /* +0..3 */
+#define IDC_KM_JLBL               0xb150      /* +0..3 */
+#define IDC_KM_JBOX               0xb158      /* +0..3 */
 
 #define ID_HELPTABLE              2000
 

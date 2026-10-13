@@ -2,6 +2,26 @@ Ribble for OS/2 - Changelog
 ============================
 
 
+Version 1.2 (2026-10-12)
+------------------------
+Key Mapping release.
+
+- New Options > Key Mapping... dialog with a Keyboard page and a
+  Joystick page. The Keyboard page assigns a key to each of the four
+  moves (left, right, up, down; arrow keys by default). The Joystick
+  page uses the GAME$ driver: enable the joystick, choose stick A or B,
+  assign a stick button or direction to each move, and calibrate the
+  stick. Keyboard and joystick work together. Default, OK and Cancel
+  buttons; the mapping is saved in the OS/2 user profile. Translated in
+  all six languages.
+- The old Keys group of the Settings dialog (Arrow / Classic / Other)
+  was removed; Settings keeps the performance options only.
+- Online help (all six languages) describes Key Mapping in the Keys
+  and Options dialog topics.
+- About dialog, BLDLEVEL string and documentation updated to
+  version 1.2.
+
+
 Version 1.1 (2026-10-04)
 ------------------------
 Second release: gameplay conveniences and a fully translated online

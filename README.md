@@ -5,7 +5,7 @@ rebuilt as a 32-bit Presentation Manager application with Open Watcom.
 
 ## Status
 
-**Version 1.1** (2026-10-04). Builds with Open Watcom C++ 2.0.1 on
+**Version 1.2** (2026-10-12). Builds with Open Watcom C++ 2.0.1 on
 ArcaOS, runs on the desktop.
 
 ## Building
@@ -19,13 +19,17 @@ Requires OS/2 Toolkit 4.5 headers (`C:\OS2TK45\h`) and `wmake` 2.0.1
 
 ## Controls
 
-- Arrow keys: move; Space or Ctrl+M: toggle map; Ctrl+T: status bar
+- Arrow keys (default): move; change them in Options > Key Mapping...; Space or Ctrl+M: toggle map; Ctrl+T: status bar
 - Ctrl+N New Game, Ctrl+O Open, Ctrl+S Save
 - Ctrl+Q End Game, Ctrl+X Exit
 
 ## Options
 
-- Options > Settings...: game and control settings
+- Options > Settings...: game settings (refresh rate, cell and visible size)
+- Options > Key Mapping...: Keyboard page (a key for each of the four
+  moves) and Joystick page (GAME$ driver: enable, stick A or B, a button
+  or stick direction per move, calibrate); the mapping is saved in the
+  OS/2 user profile
 - Options > Language: Switch between English, Spanish, Dutch, German,
   French and Italian (stored in the OS/2 user profile; also switches
   the online help language, shipped per language in `bin/help/`)

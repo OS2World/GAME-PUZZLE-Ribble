@@ -76,6 +76,8 @@ desde el principio.
 :hp2.Tecla Espacio:ehp2., para mostrar u ocultar el mapa
 :lm margin=1.
 :p.
+Estas son las teclas predeterminadas. Elija :hp2.Asignacion de teclas...:ehp2. en el menu :hp2.Opciones:ehp2. para asignar otras teclas a los cuatro movimientos y configurar un joystick. La pagina :hp1.Teclado:ehp1. tiene un cuadro por movimiento&colon. haga clic en un cuadro y pulse la tecla que desee. La pagina :hp1.Joystick:ehp1. permite activar un joystick, elegir la palanca A o B, asignar un boton o una direccion de la palanca a cada movimiento y calibrar la palanca. El teclado y el joystick funcionan a la vez. :hp1.Por defecto:ehp1. restaura los ajustes estandar, :hp1.Aceptar:ehp1. guarda los cambios y :hp1.Cancelar:ehp1. los descarta.
+:p.
 El resto de teclas se describen en las secciones de ayuda en linea
 de las zonas en las que se utilizan.
 :h2 res=10011.Ayuda para el elemento de menu Teclas
@@ -463,21 +465,9 @@ OS/2 en IBM.
 :h1 res=10023.Dialogo Opciones...
 :i1.Dialogo Opciones...
 :p.
+Las teclas para mover a :hp2.Ribble:ehp2. ya no se definen en este dialogo. Use :hp2.Asignacion de teclas...:ehp2. en el menu :hp2.Opciones:ehp2. para cambiar las teclas o configurar un joystick.
+:p.
 Use los controles de este dialogo para&colon.
-:lm margin=5.
-:p.
-&sqbul. modificar las teclas utilizadas para mover a :hp2.Ribble:ehp2.
-:lm margin=8.
-:p.
-Las tres opciones posibles son&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Flechas:ehp1., teclas de cursor.
-:p.
-&sqbul. :hp1.Clasico:ehp1., donde Z = izquierda, X = derecha, ' (apostrofo) = arriba y
-/ (barra) = abajo.
-:p.
-&sqbul. :hp1.Otro:ehp1., lo que usted quiera.
 :lm margin=5.
 :p.
 &sqbul. modificar varios ajustes para ajustar el rendimiento

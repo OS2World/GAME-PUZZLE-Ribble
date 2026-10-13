@@ -44,7 +44,7 @@ LFLAGS  = $(LFLAGS) option map=$(BINDIR)\$(NAME).map
 
 SUPPORT_OBJS = $(BINDIR)\cwindow.obj $(BINDIR)\cdialog.obj $(BINDIR)\makepath.obj $(BINDIR)\fpgline.obj $(BINDIR)\cumtxsem.obj $(BINDIR)\cthread.obj $(BINDIR)\cstrng.obj $(BINDIR)\cff.obj $(BINDIR)\cbr.obj $(BINDIR)\cassert.obj
 
-GAME_OBJS = $(BINDIR)\about.obj $(BINDIR)\bomb.obj $(BINDIR)\config.obj $(BINDIR)\edit.obj $(BINDIR)\game.obj $(BINDIR)\hiscore.obj $(BINDIR)\level.obj $(BINDIR)\mainwin.obj $(BINDIR)\man.obj $(BINDIR)\map.obj $(BINDIR)\monster.obj $(BINDIR)\options.obj $(BINDIR)\pal.obj $(BINDIR)\registry.obj $(BINDIR)\save.obj $(BINDIR)\screen.obj $(BINDIR)\slither.obj $(BINDIR)\spirit.obj $(BINDIR)\teleport.obj
+GAME_OBJS = $(BINDIR)\about.obj $(BINDIR)\bomb.obj $(BINDIR)\config.obj $(BINDIR)\edit.obj $(BINDIR)\game.obj $(BINDIR)\hiscore.obj $(BINDIR)\keymap.obj $(BINDIR)\level.obj $(BINDIR)\mainwin.obj $(BINDIR)\man.obj $(BINDIR)\map.obj $(BINDIR)\monster.obj $(BINDIR)\options.obj $(BINDIR)\pal.obj $(BINDIR)\registry.obj $(BINDIR)\save.obj $(BINDIR)\screen.obj $(BINDIR)\slither.obj $(BINDIR)\spirit.obj $(BINDIR)\teleport.obj
 
 OBJS    = $(SUPPORT_OBJS) $(GAME_OBJS)
 
@@ -139,6 +139,10 @@ $(BINDIR)\game.obj : $(SRCDIR)\game.cpp $(BINDIR)
 $(BINDIR)\hiscore.obj : $(SRCDIR)\hiscore.cpp $(BINDIR)
 	@echo Compiling src\hiscore.cpp
 	@$(CCPP) $(CFLAGS) -fo=$@ $(SRCDIR)\hiscore.cpp
+
+$(BINDIR)\keymap.obj : $(SRCDIR)\keymap.cpp $(BINDIR)
+	@echo Compiling src\keymap.cpp
+	@$(CCPP) $(CFLAGS) -fo=$@ $(SRCDIR)\keymap.cpp
 
 $(BINDIR)\level.obj : $(SRCDIR)\level.cpp $(BINDIR)
 	@echo Compiling src\level.cpp

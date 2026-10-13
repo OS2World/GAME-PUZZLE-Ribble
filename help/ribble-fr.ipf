@@ -76,6 +76,8 @@ en cours depuis le debut.
 :hp2.Touche Espace:ehp2., pour afficher ou masquer la carte
 :lm margin=1.
 :p.
+Ce sont les touches par defaut. Choisissez :hp2.Affectation des touches...:ehp2. dans le menu :hp2.Options:ehp2. pour affecter d'autres touches aux quatre deplacements et configurer un joystick. La page :hp1.Clavier:ehp1. comporte une case par deplacement&colon. cliquez sur une case et appuyez sur la touche voulue. La page :hp1.Joystick:ehp1. permet d'activer un joystick, de choisir le manche A ou B, d'affecter un bouton ou une direction du manche a chaque deplacement et de calibrer le manche. Le clavier et le joystick fonctionnent ensemble. :hp1.Defaut:ehp1. restaure les reglages standard, :hp1.OK:ehp1. enregistre les modifications et :hp1.Annuler:ehp1. les abandonne.
+:p.
 Les autres touches sont decrites dans les sections d'aide en ligne
 des domaines ou elles s'appliquent.
 :h2 res=10011.Aide pour l'element de menu Touches
@@ -463,21 +465,9 @@ participe a OS/2 chez IBM.
 :h1 res=10023.Boite de dialogue Options...
 :i1.Boite de dialogue Options...
 :p.
+Les touches pour deplacer :hp2.Ribble:ehp2. ne se definissent plus dans cette boite de dialogue. Utilisez :hp2.Affectation des touches...:ehp2. dans le menu :hp2.Options:ehp2. pour changer les touches ou configurer un joystick.
+:p.
 Utilisez les controles de cette boite de dialogue pour&colon.
-:lm margin=5.
-:p.
-&sqbul. modifier les touches utilisees pour deplacer :hp2.Ribble:ehp2.
-:lm margin=8.
-:p.
-Les trois choix possibles sont&colon.
-:lm margin=10.
-:p.
-&sqbul. :hp1.Fleches:ehp1., les touches de curseur.
-:p.
-&sqbul. :hp1.Classique:ehp1., ou Z = gauche, X = droite, ' (apostrophe) = haut et
-/ (barre oblique) = bas.
-:p.
-&sqbul. :hp1.Autre:ehp1., ce que vous voulez.
 :lm margin=5.
 :p.
 &sqbul. modifier divers parametres afin de regler les performances

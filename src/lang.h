@@ -40,7 +40,8 @@
 #define STR_MENU_VIEWMAP      16
 #define STR_MENU_VIEWSTATUS   17
 #define STR_MENU_FRAME        18
-#define NUM_STRINGS           19
+#define STR_MENU_KEYMAP       19
+#define NUM_STRINGS           20
 
 #ifndef LANG_NO_TABLES
 
@@ -58,7 +59,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Level...",   "~Options...",
     "~Map...\tCtrl+M", "~Status...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "~Key Mapping..."
   },
   // Spanish
   {
@@ -72,7 +74,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Nivel...",    "~Opciones...",
     "~Mapa...\tCtrl+M",     "~Estado...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "~Asignacion de teclas..."
   },
   // Dutch
   {
@@ -86,7 +89,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Level...",   "~Opties...",
     "~Kaart...\tCtrl+M",   "~Status...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "~Toetsen toewijzen..."
   },
   // German
   {
@@ -100,7 +104,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Level...",   "~Optionen...",
     "~Uebersicht...\tCtrl+M", "~Status...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "~Tastenzuordnung..."
   },
   // French
   {
@@ -114,7 +119,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Niveau...",  "~Options...",
     "~Carte...\tCtrl+M",   "~Statut...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "~Affectation des touches..."
   },
   // Italian
   {
@@ -128,7 +134,8 @@ static const char* LanguageStrings[NUM_LANGUAGES][NUM_STRINGS] =
     "~About...",
     "~Livello...",  "~Opzioni...",
     "~Mappa...\tCtrl+M",    "~Stato...\tCtrl+T",
-    "~Frame Controls\tCtrl+F"
+    "~Frame Controls\tCtrl+F",
+    "As~segnazione tasti..."
   }
 };
 

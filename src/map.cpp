@@ -422,7 +422,7 @@ Map::StraightSave(void)
       manY = man->QueryYPos() / config->QueryStepY();
     }
 
-  tmpfile << "# Ribble v1.1 level file.\n#\n"
+  tmpfile << "# Ribble v1.2 level file.\n#\n"
     << "Title: " << (char*)title << endl
       << "Comment: " << (char*)comment << endl
 	<< "Author: " << (char*)author << endl

@@ -179,21 +179,21 @@ map->QueryEgg(x)
 
       // Now see about moving off this newly reached position.
       // Favour the previous movement direction if possible...
-      if (oldcxd > 0 && keys[RightKey])
+      if (oldcxd > 0 && (keys[RightKey] || joy[RightKey]))
         cxd = config->QueryStepX();
-      else if (oldcxd < 0 && keys[LeftKey])
+      else if (oldcxd < 0 && (keys[LeftKey] || joy[LeftKey]))
         cxd = -config->QueryStepX();
-      else if (oldcyd < 0 && keys[DownKey])
+      else if (oldcyd < 0 && (keys[DownKey] || joy[DownKey]))
         cyd = -config->QueryStepY();
-      else if (oldcyd > 0 && keys[UpKey])
+      else if (oldcyd > 0 && (keys[UpKey] || joy[UpKey]))
         cyd = config->QueryStepY();
-      else if (keys[LeftKey])     // No favoured direction, pick anything
+      else if ((keys[LeftKey] || joy[LeftKey]))     // No favoured direction, pick anything
         cxd = -config->QueryStepX();
-      else if (keys[RightKey])
+      else if ((keys[RightKey] || joy[RightKey]))
         cxd = config->QueryStepX();
-      else if (keys[UpKey])
+      else if ((keys[UpKey] || joy[UpKey]))
         cyd = config->QueryStepY();
-      else if (keys[DownKey])
+      else if ((keys[DownKey] || joy[DownKey]))
         cyd = -config->QueryStepY();
       oldcxd = cxd;
       oldcyd = cyd;
@@ -204,6 +204,13 @@ void
 Man::KeySet(int _key, ULONG _state)
 {
   keys[_key] = (_state & KC_KEYUP) ? 0 : 1;
+}
+
+void
+Man::ClearKeys(void)
+{
+  for (int i = 0; i < 4; i++)
+    keys[i] = joy[i] = 0;
 }
 
 void
@@ -227,6 +234,8 @@ Man::Man(MainWindow* _win, int _x, int _y)
   oldcyd = cyd;
   keys[LeftKey] = keys[RightKey] =
     keys[UpKey]   = keys[DownKey]  = 0;
+  joy[LeftKey] = joy[RightKey] =
+    joy[UpKey]   = joy[DownKey]  = 0;
 }
 
 
